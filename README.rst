@@ -3,8 +3,6 @@ Note: The comercial `DeepL API <https://www.deepl.com/api.html>`_ has been relea
 
 pydeepl
 =======
-.. image:: https://api.travis-ci.org/EmilioK97/pydeepl.svg?branch=master
-
 
 A Python API wrapper for the `DeepL <https://www.deepl.com/>`_ translation service.
 
@@ -64,6 +62,14 @@ Pydeepl supports these languages:
 | NL     | Dutch           |
 +--------+-----------------+
 | PL     | Polish          |
++--------+-----------------+
+| PT     | Portugais       |
++--------+-----------------+
+| RU     | Russian         |
++--------+-----------------+
+| NL     | Netherlands     |
++--------+-----------------+
+| JA     | Japanese        |
 +--------+-----------------+
 
     Note that auto detection is only possible for the source language.
