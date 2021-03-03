@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 """ Command line script to use DeepL translator service.
 
-Requirement: https://github.com/EmilioK97/pydeepl
-
 WARNING: not available, the DeepL API is now only for paying users.
 See https://github.com/EmilioK97/pydeepl/issues/6 and https://www.deepl.com/api.html.
 
+Original repository : https://github.com/EmilioK97/pydeepl
 Original Script (https://bitbucket.org/lbesson/bin/src/master/deepl.py)
 - *Date:* 11 December 2017.
 - *Author:* Lilian Besson, © 2017.
@@ -21,19 +20,9 @@ try:
     from pydeepl import translate
 except ImportError:
     print("Unable to import 'pydeepl', please install it with 'pip install pydeepl'.")
-    print("More details at 'https://github.com/EmilioK97/pydeepl'.")
+    print("More details at 'https://github.com/Breizhux/pydeepl'.")
 
-FROM_LANGUAGE = 'EN'
-TO_LANGUAGE = 'FR'
-
-
-def main(argv, to_language=TO_LANGUAGE, from_language=FROM_LANGUAGE):
-    """ Main function. Use the arguments of the command line (sys.argv). """
-    # TODO use docopt to handle the command line arguments! Cf. http://docopt.org/
-    # TODO can docopt handle a cli documentation with ansicolortags tags in it? Cf. http://ansicolortags.rtfd.io/
-    # Manual handing of the command line arguments
-    if "-h" in argv or "--help" in argv:
-        print("""
+DOCUMENTATION = """
 python -m pydeepl --help|-h | -f file | [--from LANG] [--to LANG] text
 
 A simple Python script translate a text from a language to another language, using DeepL translator (https://www.deepl.com/translator).
@@ -50,7 +39,18 @@ J'aime utiliser la ligne de commande pour traduire mon texte.
 
 $ deepl.py --to ES "I like using command line to translate my text."
 Me gusta usar la línea de comandos para traducir mi texto.
-""")
+"""
+FROM_LANGUAGE = 'EN'
+TO_LANGUAGE = 'FR'
+
+
+def main(argv, to_language=TO_LANGUAGE, from_language=FROM_LANGUAGE):
+    """ Main function. Use the arguments of the command line (sys.argv). """
+    # TODO use docopt to handle the command line arguments! Cf. http://docopt.org/
+    # TODO can docopt handle a cli documentation with ansicolortags tags in it? Cf. http://ansicolortags.rtfd.io/
+    # Manual handing of the command line arguments
+    if "-h" in argv or "--help" in argv:
+        print(DOCUMENTATION)
         return 0
 
     if "--to" in argv:
