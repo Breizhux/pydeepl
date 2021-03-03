@@ -1,6 +1,3 @@
-Note: The comercial `DeepL API <https://www.deepl.com/api.html>`_ has been released. You should use it instead subscribing to DeepL Pro.
-========================================================================================================================================
-
 pydeepl
 =======
 
